@@ -5,7 +5,6 @@ namespace Rekrutacja.Extensions
 {
     public static class StringToIntExtensionMethod
     {
-        //'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         private readonly static char[] validNumberDecipalSeparators = { ',', '.' };
         private readonly static char[] validOtherNumberCharacters = { ' ', '-' };
 
@@ -13,7 +12,7 @@ namespace Rekrutacja.Extensions
         /// Konwertuje liczbę zapisaną w postaci tekstu na int, pomijając jej wartość ułamkową
         /// </summary>
         /// <param name="str">Liczba zapisana w postaci tekstu</param>
-        /// <returns>Wartoć całkowita liczby zapisanej w postaci tekstu, 0 w przypadku istnienia niedozwolonych znaków w tekcie - innych niż cyfry, spacja, kropka i przecinek</returns>
+        /// <returns>Wartoć całkowita liczby zapisanej w postaci tekstu, wyjątek w przypadku niedozwolonych znaków - innych niż cyfry, spacja, kropka i przecinek</returns>
         public static int ToInt(this string str)
         {
             if (!ValidateInputString(str))
